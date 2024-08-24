@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Student Form</title>
+</head>
+
+<body>
+<form th:action="@{/ConfirmStudent}" method="GET">
+    First Name : <input type="text" th:field="${student.firstNAme}">
+
+    <br> <br/>
+    Last Name : <input type="text" th:field="${student.lastName}">
+    <br> <br/>
+    Country :
+    <select th:field="${student.country}">
+    <option th:each="temp : ${countries}" th:value="${temp}" th:text="${temp}"></option>
+
+    </select>
+    <br> <br/>
+    <input type="radio" th:field="${student.language}"
+    th:each="temp : ${languages}"
+    th:value="${temp}"
+    th:text="${temp}">
+    <br> <br/>
+    <input type="submit" value="submit" />
+</form>
+</body>
+
+</html>

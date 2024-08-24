@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Customer Form</title>
+</head>
+
+<body>
+<form th:action="@{/ConfirmCustomer}" method="GET">
+    First Name : <input type="text" th:field="${customer.firstName}">
+
+    <br> <br/>
+    Last Name : <input type="text" th:field="${customer.lastName}">
+    <span th:if="${#fields.hasErrors('${customer.lastName}')}"
+          th:errors="${customer.lastName}"></span>
+
+    <br> <br/>
+    Email : <input type="text" th:field="${customer.email}">
+    <span th:if="${#fields.hasErrors('${customer.email}')}"
+          th:errors="${customer.email}"></span>
+
+    <br> <br/>
+    Grade : <input type="text" th:field="${customer.grade}">
+    <span th:if="${#fields.hasErrors('${customer.grade}')}"
+          th:errors="${customer.grade}"></span>
+    <br> <br/>
+    <input type="submit" value="submit" />
+</form>
+</body>
+
+</html>
