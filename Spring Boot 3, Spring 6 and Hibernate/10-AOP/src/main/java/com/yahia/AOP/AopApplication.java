@@ -16,7 +16,7 @@ public class AopApplication {
 	@Bean
 	CommandLineRunner commandLineRunner(demoDAO demo){
 		return runner -> {
-			demo.addEmployee();
+			demo.around();
 		};
 	}
 }
